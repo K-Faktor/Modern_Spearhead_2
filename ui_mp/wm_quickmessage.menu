@@ -1,0 +1,391 @@
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Call of Duty 4: Modern Warfare                                                                                                   ¦
+//¦----------------------------------------------------------------------------------------------------------------------------------¦
+//¦ Mod				: Modern Spearhead 2                                                                                 ¦
+//¦ Modifications By		: [G13]Gooser13 and [G13]Newfie"                                                                     ¦
+//¦ Website			: http://www.clang13.com                                                                             ¦
+//¦                                                                                                                                  ¦
+//¦ Main Source Mod		: The OpenWarfare Project... An Open Source Mod for COD4:MW!                                         ¦
+//¦ Website  			: http://openwarfaremod.com/                                                                         ¦
+//¦                                                                                                                                  ¦
+//¦ Secondary Source Mod	: AWE 4, By Wizz and Tally (dedicated to Bell - original creator of AWE)                             ¦
+//¦ Website  			: http://www.raidersmerciless.com/                                                                   ¦
+//¦                                                                                                                                  ¦
+//¦ Third Source Mod		: Freezetag v1.2 from kill3r                                                                         ¦
+//¦ Website  			: http://www.kill3rcreations.com/                                                                    ¦
+//¦                                                                                                                                  ¦
+//¦ Fourth Source Mod		: ExTreme+ X4 Mod                                                                                    ¦
+//¦ Website  			: http://www.mycallofduty.com                                                                        ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Colour Codes For RGB	Colour Codes For Text                                                                                ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Black  0 0 0		^0 = Black                                                                                           ¦
+//¦ White  1 1 1 		^7 = White                                                                                           ¦
+//¦ Red    1 0 0		^1 = Red                                                                                             ¦
+//¦ Green  0 1 0		^2 = Green                                                                                           ¦
+//¦ Blue   0 0 1		^4 = Blue                                                                                            ¦
+//¦ Yellow 1 1 0		^3 = Yellow                                                                                          ¦
+//¦ 				^5 = Cyan                                                                                            ¦
+//¦ 				^6 = pink/Magenta                                                                                    ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_GROUP			"quickmessage"
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#include "ui_mp/popupstyle.inc"	
+#include "ui/choices_setup_popmenu.menu"
+
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X			350
+
+#undef CHOICE_POPUP_BACKCOLOR
+#define CHOICE_POPUP_BACKCOLOR  0.2 0.2 0.22 0.65
+
+#define ORIGIN_QUICKMESSAGEWINDOW		0 16
+
+{
+	menuDef
+	{
+		IMPROVED_POPUP_SETUP_ONOPEN( quickmessage, 10, 4, 210, ;, setDvar cl_bypassMouseInput "1";, 0 )
+		onClose{ setDvar cl_bypassMouseInput "0" }
+		
+		CHOICE_POPMENU_TITLE( "@QUICKMESSAGE_QUICK_MESSAGE" )
+		
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			16 20 0 0
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@QUICKMESSAGE_1_COMMANDS"
+			decoration
+		}
+		execKey "1" { close quickmessage; open quickcommands }
+	
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			16 36 0 0
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@QUICKMESSAGE_2_STATEMENTS"
+			decoration
+		}
+		execKey "2" { close quickmessage; open quickstatements }
+	
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			16 52 0 0
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@QUICKMESSAGE_3_RESPONSES"
+			decoration
+		}
+		execKey "3" { close quickmessage; open quickresponses }
+
+		itemDef
+		{
+			name			"window"
+			visible			when( dvarint( ui_enable_spearhead_quickmessages ) == 1 );
+			rect			16 68 0 0
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_4_COMMANDS"
+			decoration
+		}
+		execKey "4" { close quickmessage; open ms2quickcommands }
+	
+		itemDef
+		{
+			name			"window"
+			visible			when( dvarint( ui_enable_spearhead_quickmessages ) == 1 );
+			rect			16 84 0 0
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_5_STATEMENTS"
+			decoration
+		}
+		execKey "5" { close quickmessage; open ms2quickstatements }
+	
+		itemDef
+		{
+			name			"window"
+			visible			when( dvarint( ui_enable_spearhead_quickmessages ) == 1 );
+			rect			16 100 0 0
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_6_RESPONSES"
+			decoration
+		}
+		execKey "6" { close quickmessage; open ms2quickresponses }
+
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			16 164 0 0
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@QUICKMESSAGE_ESC_EXIT"
+			decoration
+		}
+	}
+}
+
+
+/*
+#include "ui/menudef.h"
+
+#define ORIGIN_QUICKMESSAGETAB			32 224
+#define ORIGIN_QUICKMESSAGEWINDOW		32 256
+
+{
+	menuDef
+	{
+		name			"quickmessage"
+		visible			0
+		fullscreen		0
+		rect			0 0 640 480
+		focuscolor		1 1 1 1
+		disablecolor		0 0 0 0
+ 		style			WINDOW_STYLE_EMPTY
+
+		onOpen
+		{
+			setDvar cl_bypassMouseInput "1"
+		}
+		onClose
+		{
+			setDvar cl_bypassMouseInput "0"
+		}
+
+// WINDOW BACKGROUND
+		itemDef
+		{
+			name			"window_background"
+			visible			1
+			rect			0 0 224 192
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			style			WINDOW_STYLE_FILLED
+			forecolor		1 1 1 1
+			backcolor		0 0 0 0.7975
+			decoration
+		}
+	
+// WINDOW LINES
+		itemDef
+		{
+			name			"window_lines"
+			visible			1
+			rect			3 0 2 187
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+		itemDef
+		{
+			name			"window_lines"
+			visible			1
+			rect			219 0 2 187
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+		itemDef
+		{
+			name			"window_lines"
+			visible			1
+			rect			5 0 214 2
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+		itemDef
+		{
+			name			"window_lines"
+			visible			1
+			rect			3 187 218 2
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+
+// TITLE
+		itemDef
+		{
+			name			"title"
+			visible			1
+			rect			0 0 224 32
+			origin			ORIGIN_QUICKMESSAGETAB
+			style			WINDOW_STYLE_FILLED
+			forecolor		1 1 1 1
+			backcolor		0 0 0 0.7975
+			type			ITEM_TYPE_TEXT
+			text			"@QUICKMESSAGE_QUICK_MESSAGE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textaligny		24
+			textalign		ITEM_ALIGN_CENTER
+			decoration
+		}
+		itemDef
+		{
+			name			"title_quickmessage_gray"
+			visible			1
+			rect			3 3 218 29
+			origin			ORIGIN_QUICKMESSAGETAB
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			16 20 0 0
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@QUICKMESSAGE_1_COMMANDS"
+			decoration
+		}
+		execKey "1" { close quickmessage; open quickcommands }
+	
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			16 36 0 0
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@QUICKMESSAGE_2_STATEMENTS"
+			decoration
+		}
+		execKey "2" { close quickmessage; open quickstatements }
+	
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			16 52 0 0
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@QUICKMESSAGE_3_RESPONSES"
+			decoration
+		}
+		execKey "3" { close quickmessage; open quickresponses }
+
+		itemDef
+		{
+			name			"window"
+			visible			when( dvarint( ui_enable_spearhead_quickmessages ) == 1 );
+			rect			16 68 0 0
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_4_COMMANDS"
+			decoration
+		}
+		execKey "4" { close quickmessage; open ms2quickcommands }
+	
+		itemDef
+		{
+			name			"window"
+			visible			when( dvarint( ui_enable_spearhead_quickmessages ) == 1 );
+			rect			16 84 0 0
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_5_STATEMENTS"
+			decoration
+		}
+		execKey "5" { close quickmessage; open ms2quickstatements }
+	
+		itemDef
+		{
+			name			"window"
+			visible			when( dvarint( ui_enable_spearhead_quickmessages ) == 1 );
+			rect			16 100 0 0
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_6_RESPONSES"
+			decoration
+		}
+		execKey "6" { close quickmessage; open ms2quickresponses }
+
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			16 164 0 0
+			origin			ORIGIN_QUICKMESSAGEWINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@QUICKMESSAGE_ESC_EXIT"
+			decoration
+		}
+	}
+}
+*/

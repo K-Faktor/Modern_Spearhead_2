@@ -1,0 +1,234 @@
+//******************************************************************************
+//  _____                  _    _             __
+// |  _  |                | |  | |           / _|
+// | | | |_ __   ___ _ __ | |  | | __ _ _ __| |_ __ _ _ __ ___
+// | | | | '_ \ / _ \ '_ \| |/\| |/ _` | '__|  _/ _` | '__/ _ \
+// \ \_/ / |_) |  __/ | | \  /\  / (_| | |  | || (_| | | |  __/
+//  \___/| .__/ \___|_| |_|\/  \/ \__,_|_|  |_| \__,_|_|  \___|
+//       | |               We don't make the game you play.
+//       |_|                 We make the game you play BETTER.
+//
+//            Website: http://openwarfaremod.com/
+//******************************************************************************
+
+#include "ui/menudef.h"
+
+#define ORIGIN_DIY_TITLE_PC			42 270
+#define ORIGIN_DIY_FRAME_PC			35 270
+#define ORIGIN_DIY_PC				37 290
+
+#define ORIGIN_DIY_TITLE_HIDEF		82 300
+#define ORIGIN_DIY_FRAME_HIDEF		75 300
+#define ORIGIN_DIY_HIDEF			77 320
+#define ORIGIN_DIY_TITLE			166 300
+#define ORIGIN_DIY_FRAME			159 300
+#define ORIGIN_DIY					161 320
+
+#define WIDESCREEN_OFFSET			107 0
+
+// Displayed when client is initially connecting to the server.
+{
+	menuDef
+	{
+		name			"connect"
+		style			WINDOW_STYLE_FILLED
+		fullScreen		MENU_FALSE
+		focusColor		COLOR_FOCUSED
+		visible			MENU_FALSE
+
+
+		backcolor		1 1 1 1
+		background		"$levelBriefing"
+		rect			FULLSCREEN_WIDE
+
+		// load progress bar background
+		itemDef
+		{
+			rect			-256 -28 512 8 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_BOTTOM
+			origin			WIDESCREEN_OFFSET
+			forecolor		0.1 0.1 0.1 0.7
+			style			WINDOW_STYLE_SHADER
+			background		"loadingmap"
+			visible 		1
+			decoration
+		}
+
+		// load progress bar
+		itemDef
+		{
+			name			"loadbar"
+			style			WINDOW_STYLE_LOADBAR
+			rect			-256 -28 512 8 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_BOTTOM
+			forecolor		1 1 1 1
+			origin			WIDESCREEN_OFFSET
+			background		"loadingmap"
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			name			"loadbartext"
+			style			ITEM_TYPE_TEXT
+			rect			-127 -5 258 20 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_BOTTOM
+			origin			WIDESCREEN_OFFSET
+			textfont		UI_FONT_DEFAULT
+			dvar			"ui_clan_load_mess"
+			textalign 		ITEM_ALIGN_CENTER
+			textscale		TEXTSIZE_SMALL
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			
+			style			WINDOW_STYLE_SHADER
+			rect			10 20 220 140 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_CENTER
+			origin			WIDESCREEN_OFFSET
+			background		"white"
+			forecolor		.2 .2 .2 0.8
+			border			1
+			bordersize		1
+			bordercolor		0.5 0.5 0.5 0.8
+			visible			1	decoration
+		}
+		
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			rect			 20 42 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_CENTER
+			origin			WIDESCREEN_OFFSET
+			forecolor		1 1 0 1
+			text			"@OW_BROUGHT2UBY"
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_SMALL
+			decoration
+		}
+
+		itemDef
+		{
+			rect			128 50 200 100 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_CENTER
+			forecolor		1 1 1 1
+			style			WINDOW_STYLE_SHADER
+			background		"clanlogo"
+			visible 		1
+			decoration
+		}
+
+		itemDef
+		{
+			
+			style			WINDOW_STYLE_SHADER
+			rect			-230 20 220 140 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_CENTER
+			origin			WIDESCREEN_OFFSET
+			background		"white"
+			forecolor		.2 .2 .2 0.8
+			border			1
+			bordersize		1
+			bordercolor		0.5 0.5 0.5 0.8
+			visible			1	decoration
+		}
+		
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			rect			 -220 42 0 0 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_CENTER
+			origin			WIDESCREEN_OFFSET
+			forecolor		1 1 0 1
+			text			"@OW_SERVERPOWEREDBY"
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_SMALL
+			decoration
+		}
+
+		itemDef
+		{
+			rect			-112 50 200 100 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_CENTER
+			forecolor		1 1 1 1
+			style			WINDOW_STYLE_SHADER
+			background		"openwarfare"
+			visible 		1
+			decoration
+		}
+
+		// Modern Spearhead 2 Freezetag Feature Items
+		itemDef
+		{
+			
+			style			WINDOW_STYLE_SHADER
+			rect			165 197 305 50
+			origin			WIDESCREEN_OFFSET
+			background		"white"
+			forecolor		.2 .2 .2 0.8
+			border			1
+			bordersize		1
+			bordercolor		0.5 0.5 0.5 0.8
+			visible			when ( dvarbool( ui_gameplay_ftag ) );
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			rect			320 220 0 0
+			origin			WIDESCREEN_OFFSET
+			forecolor		1 1 1 1
+			dvar			"ui_clan_welcome_mess"			
+			textalign 		ITEM_ALIGN_CENTER
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_DEFAULT
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			rect			320 220 0 0
+			origin			WIDESCREEN_OFFSET
+			forecolor		1 1 1 1
+			text			"@MS2_MODNAME"
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_SMALL
+			textalign 		ITEM_ALIGN_CENTER
+			textaligny 		15
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			320 220 0 0
+			origin			WIDESCREEN_OFFSET
+			forecolor		1 1 1 1
+			text			"@MS2_FREEZETAG_FEATURE_ON"
+			textfont		UI_FONT_DEFAULT
+			textscale		0.2
+			textalign 		ITEM_ALIGN_CENTER
+			textaligny 		25
+			visible			when ( dvarbool( ui_gameplay_ftag ) );
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			320 220 0 0
+			origin			WIDESCREEN_OFFSET
+			forecolor		1 1 1 1
+			text			"@MS2_FREEZETAG_FEATURE_OFF"
+			textfont		UI_FONT_DEFAULT
+			textscale		0.2
+			textalign 		ITEM_ALIGN_CENTER
+			textaligny 		25
+			visible			when ( !dvarbool( ui_gameplay_ftag ) );
+			decoration
+		}
+
+		#include "ui/safearea.menu"
+	}
+}
+

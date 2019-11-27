@@ -1,0 +1,156 @@
+"#""If the first column for a row is blank"," then the row is ignored""",
+# The first non-comment line of a sound alias file specifies the key name for all values appearing in this column.,,
+"# This means it is safe to swap entire columns around, though you should never swap partial columns.",,
+"# You can invent new keys, but the game will ignore them if it doesn't know about them.",,
+"# You can leave out keys, but the ""name"" and ""file"" keys must always be present.",,
+
+,name,name of the alias that is used to play this sound (required)
+,sequence,"used to uniquely identify alias entries when more than one sound goes to an alias, used only to catch unwanted duplicates (default = 0)"
+,file,the name of the file that contains the sound data (required)
+,vol_min,"0 is silent, 1 is full volume (default = 1)"
+,vol_max,"0 is silent, 1 is full volume (default = same as vol_min)"
+,vol_mod,"blank causes no effect on vol_min and vol_max, otherwise the string must match a string in the volumemodgroups.def file and the value in that file corresponding to that string will be used to adjust vol_min and vol_max, clamped to the valid range"
+,pitch_min,"1 is normal playback, 2 is twice as fast, 0.5 is half as fast (default = 1)"
+,pitch_max,"1 is normal playback, 2 is twice as fast, 0.5 is half as fast (default = same as pitch_min)"
+,dist_min,"within this distance in inches, the sound is always full volume (default = 120)"
+,dist_max,"outside this distance in inches, the sound is not started.  If left blank or set to 0, the sound will play from any distance.  This does not affect sound volume falloff."
+,channel,"auto, menu, weapon, voice, item, body, local, music, announcer (default = auto)"
+,type,primed (a streamed sound which gets primed on some platforms) / streamed / loaded (default = loaded)
+,probability,weight to use for the weighted probability of playing this sound instead of another sound (default = 1)
+,loop,"whether this sound is ""looping"" or ""nonlooping"" (default = ""nonlooping"")"
+,masterslave,"if ""master"", this is a master sound.  If a number, then this sound's volume will be multiplied by that number (a percentage between 0 and 1) any master sound is playing.  If blank, then neither master nor slave."
+,loadspec,"space-separated list of which maps should use this alias; eg, ""burnville dawnville"".  If blank, the alias is used on all maps."
+,compression,"a string corresponding to an entry in ""XMAUpdate.tbl"" which is used to determine compression by XMAUpdate.exe"
+,secondaryaliasname,"defined the name of an additional sound alias to play in addition to the current alias being played. Note that it is an error for the secondaryalias to also define a secondaryaliasname (eg, if B is a secondaryalias of A, B is not allowed to have its own secondaryalias)."
+,volumefalloffcurve,if blank uses the linear curve which can not be changed. A string 'XXXX' corresponds to the curve defined by the file 'soundaliases/XXXX.vfcurve'
+,startdelay,defaults to no delay. The value is the number of milliseconds to delay starting the sound by
+,speakermap,if blank uses the default speakermappings which cannot be changed. A string 'XXXX' corresponds to the speakermap defined by the file 'soundaliases/XXXX.spkrmap'. 
+,reverb,"blank means the alias is affected normally by wet and dry levels, ""fulldrylevel"" forces the alias to use a full drylevel (ignoring the global drylevel), ""nowetlevel"" forces the alias to use no wetlevel (ignoring the global wetlevel)"
+,lfe percentage,this determines what percentage of the highest calculated spatialized speaker volume should be passed to the LFE. blank means no LFE for the sound
+,center percentage,this determines what percentage of the volume should be redirected to the center channel (equal percentage taken from all speakers).
+,platform,"used by XMAUpdate to determine whether the alias should be processed for a particular platform.  If blank, process for all platforms.  Platforms are PC, XB, PS, WI.  Multiple values should be separated by spaces.  !PC will exclude alias from PC but include in all other platforms.  PC will only include alias for PC.  !PC XB is invalid."
+,envelop_min,any sounds within this distance of the listener will use the full envelop percentage
+,envelop_max,sounds between enevlop_min and envelop_max use a fraction of the envelop percentage,,,,,,,,,,,,,,,,,,,,,,,,,,
+,envelop percentage,amount of omnidirectionality to apply,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+name,sequence,file,vol_min,vol_max,vol_mod,pitch_min,pitch_max,dist_min,dist_max,channel,type,probability,loop,masterslave,loadspec,subtitle,compression,secondaryaliasname,volumefalloffcurve,startdelay,speakermap,reverb,lfe percentage,center percentage,platform,envelop_min,envelop_max,envelop percentage
+
+US_attack,1,moh/American/dfr_mpic_AS3077ty2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_coverme,1,moh/American/dfr_mpic_AS3071ty1.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_icoveru,1,moh/American/dfr_mpic_AS3072ty1.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_squadcoverfire,1,moh/American/dfr_mpsc_AS3068ty2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_grenadetakecover,1,moh/American/dfr_mpsr_AS3083ty3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_followme,1,moh/American/dfr_mpic_AS3073ty1.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_openfire,1,moh/American/dfr_mpic_AS3078ty2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_youtakepoint,1,moh/American/dfr_mpic_AS3074ty2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_moveonsig,1,moh/American/dfr_mpic_AS3076ty3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_allyougot,1,moh/American/allyougot.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_backaftertargetpractice,1,moh/American/backaftertargetpractice.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_comepreparednext,1,moh/American/comepreparednext.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_cowards,1,moh/American/dfr_mpt_AS3093ty2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_runyellowbelly,1,moh/American/runyellowbelly.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_wherehiding,1,moh/American/dfr_mpt_AS3094ty4.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_whowantsmore,1,moh/American/dfr_mpt_AS3087ty3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_tooeasy,1,moh/American/dfr_mpt_AS3089ty2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_messbest,1,moh/American/dfr_mpt_AS3090ty3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_yessir,1,moh/American/dfr_mpsr_AS3079ty1.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_nosir,1,moh/American/dfr_mpsr_AS3080ty2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_thanks,1,moh/American/dfr_mpsr_AS3085ty6.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_ioweyouone,1,moh/American/dfr_mpsr_AS3086ty1.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_goodjob,1,moh/American/dfr_mpgm_AS3055ty3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_doneit,1,moh/American/dfr_mpgm_AS3057ty2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_fireneedhelp,1,moh/American/dfr_mpic_AS3075ty2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_enemyspot,1,moh/American/dfr_mpsr_AS3081ty3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_wooohoo,1,moh/American/dfr_mpgm_AS3058ty1.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_attack,1,moh/British/dfr_mpic_BS6053tc3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_coverme,1,moh/British/dfr_mpic_BS6047tc3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_icoveru,1,moh/British/dfr_mpic_BS6048tc2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_squadcoverfire,1,moh/British/dfr_mpsc_BS6044tc4.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_grenadetakecover,1,moh/British/dfr_mpic_BS6059tc1.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_followme,1,moh/British/dfr_mpic_BS6049tc2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_openfire,1,moh/British/dfr_mpic_BS6054tc4.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_youtakepoint,1,moh/British/dfr_mpic_BS6050tc8.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_moveonsig,1,moh/British/dfr_mpic_BS6052tc3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_allyougot,1,moh/British/allyougot.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_backaftertargetpractice,1,moh/British/backaftertargetpractice.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_comepreparednext,1,moh/British/comepreparednext.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_cowards,1,moh/British/dfr_mpt_BS6069tc2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_runyellowbelly,1,moh/British/runyellowbelly.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_wherehiding,1,moh/British/dfr_mpt_BS6070tc1.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_whowantsmore,1,moh/British/dfr_mpt_BS6063tc3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_tooeasy,1,moh/British/dfr_mpt_BS6065tc3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_messbest,1,moh/British/dfr_mpt_BS6066tc1.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_yessir,1,moh/British/dfr_mpic_BS6055tc5.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_nosir,1,moh/British/dfr_mpic_BS6056tc5.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_thanks,1,moh/British/dfr_mpic_BS6061tc5.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_ioweyouone,1,moh/British/dfr_mpic_BS6062tc1.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_goodjob,1,moh/British/dfr_mpgm_BS6031ALTtc6.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_doneit,1,moh/British/dfr_mpgm_BS6033tc3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_fireneedhelp,1,moh/British/dfr_mpic_BS6051tc2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_enemyspot,1,moh/British/dfr_mpic_BS6057tc3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_wooohoo,1,moh/British/dfr_mpgm_BS6034tc3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_attack,1,moh/Russian/dfr_mpic_RS7547to2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_coverme,1,moh/Russian/dfr_mpic_RS7541to3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_icoveru,1,moh/Russian/dfr_mpic_RS7542to2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_squadcoverfire,1,moh/Russian/dfr_mpsc_RS7538to2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_grenadetakecover,1,moh/Russian/dfr_mpsr_RS7553to3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_followme,1,moh/Russian/dfr_mpic_RS7543to1.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_openfire,1,moh/Russian/dfr_mpic_RS7548to3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_youtakepoint,1,moh/Russian/dfr_mpic_RS7544to5.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_moveonsig,1,moh/Russian/dfr_mpic_RS7546to3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_allyougot,1,moh/Russian/allyougot_g.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_backaftertargetpractice,1,moh/Russian/backaftertargetpractice_g.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_comepreparednext,1,moh/Russian/comepreparednext_g.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_cowards,1,moh/Russian/dfr_mpt_RS7563to5.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_runyellowbelly,1,moh/Russian/runyellowbelly_g.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_wherehiding,1,moh/Russian/dfr_mpt_RS7564to10.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_whowantsmore,1,moh/Russian/dfr_mpt_RS7557to4.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_tooeasy,1,moh/Russian/dfr_mpt_RS7559to6.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_messbest,1,moh/Russian/dfr_mpt_RS7560to4.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_yessir,1,moh/Russian/dfr_mpsr_RS7549to5.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_nosir,1,moh/Russian/dfr_mpsr_RS7550to3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_thanks,1,moh/Russian/dfr_mpsr_RS7555to2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_ioweyouone,1,moh/Russian/dfr_mpsr_RS7556to2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_goodjob,1,moh/Russian/dfr_mpgm_RS7525to3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_doneit,1,moh/Russian/dfr_mpgm_RS7527to2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_fireneedhelp,1,moh/Russian/dfr_mpic_RS7545to6.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_enemyspot,1,moh/Russian/dfr_mpsr_RS7551to2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_wooohoo,1,moh/Russian/dfr_mpgm_RS7528to1.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_attack,1,moh/German/den_mpic_GS5940tk3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_coverme,1,moh/German/den_mpic_GS5934tk3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_icoveru,1,moh/German/den_mpic_GS5935tk3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_squadcoverfire,1,moh/German/den_mpsc_GS5931tk3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_grenadetakecover,1,moh/German/den_mpsr_GS5946tk6.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_followme,1,moh/German/den_mpic_GS5936tk3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_openfire,1,moh/German/den_mpic_GS5941tk7.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_youtakepoint,1,moh/German/den_mpic_GS5937tk1.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_moveonsig,1,moh/German/den_mpic_GS5939tk2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_allyougot,1,moh/German/allyougot_g.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_backaftertargetpractice,1,moh/German/backaftertargetpractice_g.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_comepreparednext,1,moh/German/comepreparednext_g.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_cowards,1,moh/German/den_mpt_GS5956tk2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_runyellowbelly,1,moh/German/runyellowbelly_g.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_wherehiding,1,moh/German/den_mpt_GS5957tk2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_whowantsmore,1,moh/German/den_mpt_GS5950tk3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_tooeasy,1,moh/German/den_mpt_GS5952tk2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_messbest,1,moh/German/den_mpt_GS5953tk2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_yessir,1,moh/German/den_mpsr_GS5942tk3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_nosir,1,moh/German/den_mpsr_GS5943tk3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_thanks,1,moh/German/den_mpsr_GS5948tk3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_ioweyouone,1,moh/German/den_mpsr_GS5949tk1.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_goodjob,1,moh/German/den_mpgm_GS5918tk3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_doneit,1,moh/German/den_mpgm_GS5920tk4.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_fireneedhelp,1,moh/German/den_mpic_GS5938tk3.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_enemyspot,1,moh/German/den_mpsr_GS5944tk6.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_wooohoo,1,moh/German/den_mpgm_GS5921tk2.mp3,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1

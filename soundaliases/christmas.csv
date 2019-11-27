@@ -1,0 +1,7 @@
+name,sequence,file,vol_min,vol_max,vol_mod,pitch_min,pitch_max,dist_min,dist_max,channel,type,probability,loop,masterslave,loadspec,subtitle,compression,secondaryaliasname,volumefalloffcurve,startdelay,speakermap,reverb,lfe percentage,center percentage,platform,envelop_min,envelop_max,envelop percentage
+
+# Christmas Song sounds,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+emt_christmas_heli_radio1,,christmas/emt_christmas_heli_radio1.mp3,1,,emitter,,,5,3000,voice,streamed,,looping,,all_mp,,,,weapon2,,,,,,,,,
+emt_christmas_heli_radio2,,christmas/emt_christmas_heli_radio2.mp3,1,,emitter,,,5,3000,voice,streamed,,looping,,all_mp,,,,weapon2,,,,,,,,,
+emt_christmas_heli_radio3,,christmas/emt_christmas_heli_radio3.mp3,1,,emitter,,,5,3000,voice,streamed,,looping,,all_mp,,,,weapon2,,,,,,,,,
+emt_christmas_heli_radio4,,christmas/emt_christmas_heli_radio4.mp3,1,,emitter,,,5,3000,voice,streamed,,looping,,all_mp,,,,weapon2,,,,,,,,,

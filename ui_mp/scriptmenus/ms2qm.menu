@@ -1,0 +1,186 @@
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Call of Duty 4: Modern Warfare                                                                                                   ¦
+//¦----------------------------------------------------------------------------------------------------------------------------------¦
+//¦ Mod				: Modern Spearhead 2                                                                                 ¦
+//¦ Modifications By		: [G13]Gooser13 and [G13]Newfie"                                                                     ¦
+//¦ Website			: http://www.clang13.com                                                                             ¦
+//¦                                                                                                                                  ¦
+//¦ Main Source Mod		: The OpenWarfare Project... An Open Source Mod for COD4:MW!                                         ¦
+//¦ Website  			: http://openwarfaremod.com/                                                                         ¦
+//¦                                                                                                                                  ¦
+//¦ Secondary Source Mod	: AWE 4, By Wizz and Tally (dedicated to Bell - original creator of AWE)                             ¦
+//¦ Website  			: http://www.raidersmerciless.com/                                                                   ¦
+//¦                                                                                                                                  ¦
+//¦ Third Source Mod		: Freezetag v1.2 from kill3r                                                                         ¦
+//¦ Website  			: http://www.kill3rcreations.com/                                                                    ¦
+//¦                                                                                                                                  ¦
+//¦ Fourth Source Mod		: ExTreme+ X4 Mod                                                                                    ¦
+//¦ Website  			: http://www.mycallofduty.com                                                                        ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Colour Codes For RGB	Colour Codes For Text                                                                                ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Black  0 0 0		^0 = Black                                                                                           ¦
+//¦ White  1 1 1 		^7 = White                                                                                           ¦
+//¦ Red    1 0 0		^1 = Red                                                                                             ¦
+//¦ Green  0 1 0		^2 = Green                                                                                           ¦
+//¦ Blue   0 0 1		^4 = Blue                                                                                            ¦
+//¦ Yellow 1 1 0		^3 = Yellow                                                                                          ¦
+//¦ 				^5 = Cyan                                                                                            ¦
+//¦ 				^6 = pink/Magenta                                                                                    ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define OPTIONS_STYLE			1
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+{
+	menuDef
+	{
+		name 			ms2qm
+		fullScreen 		0
+		rect 			0 0 640 480			// Size and position of the menu
+		focusColor 		COLOR_FOCUSED			// Menu focus color for text and items
+		blurWorld		7.0
+		onEsc {close self;}
+		PREPROC_SHADER_DRAW( -120 0 880 480, 0 0, "white", 0 0 0 0.75, 0, 1, 0 0 0 0 )
+
+		#undef BACK_OPEN
+		#define BACK_OPEN exec "wait";
+		#include "ui_mp/navcontrols.inc"
+		CHOICE_MENU_TITLE( "@MS2_MS2_QM_BIND" )
+		#include "ui_mp/scriptmenus/ms2qm_buttons.inc"
+	}
+
+	menuDef
+	{
+		name 			ms2qmcmd
+		fullScreen 		0
+		rect 			0 0 640 480			// Size and position of the menu
+		focusColor 		COLOR_FOCUSED			// Menu focus color for text and items
+		blurWorld		7.0
+		onEsc {close self; open ms2qm;}
+		PREPROC_SHADER_DRAW( -120 0 880 480, 0 0, "white", 0 0 0 0.75, 0, 1, 0 0 0 0 )
+
+		#undef BACK_OPEN
+		#define BACK_OPEN exec "wait";
+		#include "ui_mp/navcontrols.inc"
+
+		CHOICE_MENU_TITLE( "@MS2_QC_CTL" )
+		#include "ui_mp/scriptmenus/ms2qm_buttons.inc"
+
+		// CHOICE_SECTION_TITLE( 21, "@MS2_QC_CTL" )
+		#undef CHOICE_X_START
+		#define CHOICE_X_START		-250
+
+		CHOICE_BIND( 22, "@MS2_QM_FOLLOW_ME", "openScriptMenu quickcommands 1", ; )
+		CHOICE_BIND( 23, "@MS2_QM_MOVE_IN", "openScriptMenu quickcommands 2", ; )
+		CHOICE_BIND( 24, "@MS2_QM_FALL_BACK", "openScriptMenu quickcommands 3", ; )
+		CHOICE_BIND( 25, "@MS2_QM_SUPPRESSING_FIRE", "openScriptMenu quickcommands 4", ; )
+		CHOICE_BIND( 26, "@MS2_QM_ATTACK_LEFT_FLANK", "openScriptMenu quickcommands 5", ; )
+		CHOICE_BIND( 27, "@MS2_QM_ATTACK_RIGHT_FLANK", "openScriptMenu quickcommands 6", ; )
+		CHOICE_BIND( 28, "@MS2_QM_HOLD_THIS_POSITION", "openScriptMenu quickcommands 7", ; )
+		CHOICE_BIND( 29, "@MS2_QM_REGROUP", "openScriptMenu quickcommands 8", ; )
+		CHOICE_BIND( 30, "@MS2_ATTACK", "openScriptMenu ms2quickcommands 1", ; )
+		CHOICE_BIND( 31, "@MS2_COVER_ME", "openScriptMenu ms2quickcommands 2", ; )
+		CHOICE_BIND( 32, "@MS2_I_COVER_YOU", "openScriptMenu ms2quickcommands 3", ; )
+		CHOICE_BIND( 33, "@MS2_COVERING_FIRE", "openScriptMenu ms2quickcommands 4", ; )
+		CHOICE_BIND( 34, "@MS2_GRENADE", "openScriptMenu ms2quickcommands 5", ; )
+		CHOICE_BIND( 35, "@MS2_FOLLOW_ME", "openScriptMenu ms2quickcommands 6", ; )
+		CHOICE_BIND( 36, "@MS2_OPEN_FIRE", "openScriptMenu ms2quickcommands 7", ; )
+		CHOICE_BIND( 37, "@MS2_TAKE_POINT", "openScriptMenu ms2quickcommands 8", ; )
+		CHOICE_BIND( 38, "@MS2_MOVE_SIGNAL", "openScriptMenu ms2quickcommands 9", ; )
+
+		// CHOICE_BACK( "@MENU_BACK", close self )
+
+		CHOICE_KEYBINDHELP
+	}
+
+	menuDef
+	{
+		name 			ms2qmres
+		fullScreen 		0
+		rect 			0 0 640 480			// Size and position of the menu
+		focusColor 		COLOR_FOCUSED			// Menu focus color for text and items
+		blurWorld		7.0
+		onEsc {close self; open ms2qm;}
+		PREPROC_SHADER_DRAW( -120 0 880 480, 0 0, "white", 0 0 0 0.75, 0, 1, 0 0 0 0 )
+
+		#undef BACK_OPEN
+		#define BACK_OPEN exec "wait";
+		#include "ui_mp/navcontrols.inc"
+
+		CHOICE_MENU_TITLE( "@MS2_QR_CTL" )
+		#include "ui_mp/scriptmenus/ms2qm_buttons.inc"
+
+		// CHOICE_SECTION_TITLE( 21, "@MS2_QR_CTL" )
+		#undef CHOICE_X_START
+		#define CHOICE_X_START		-250
+
+		CHOICE_BIND( 22, "@MS2_QM_YES_SIR", "openScriptMenu quickresponses 1", ; )
+		CHOICE_BIND( 23, "@MS2_QM_NO_SIR", "openScriptMenu quickresponses 2", ; )
+		CHOICE_BIND( 24, "@MS2_QM_IM_ON_MY_WAY", "openScriptMenu quickresponses 3", ; )
+		CHOICE_BIND( 25, "@MS2_QM_SORRY", "openScriptMenu quickresponses 4", ; )
+		CHOICE_BIND( 26, "@MS2_QM_GREAT_SHOT", "openScriptMenu quickresponses 5", ; )
+		CHOICE_BIND( 27, "@MS2_QM_COME_ON", "openScriptMenu quickresponses 6", ; )
+		CHOICE_BIND( 28, "@MS2_YES_SIR", "openScriptMenu ms2quickresponses 1", ; )
+		CHOICE_BIND( 29, "@MS2_NO_SIR", "openScriptMenu ms2quickresponses 2", ; )
+		CHOICE_BIND( 30, "@MS2_THANKS", "openScriptMenu ms2quickresponses 3", ; )
+		CHOICE_BIND( 31, "@MS2_I_OWE_YOU", "openScriptMenu ms2quickresponses 4", ; )
+		CHOICE_BIND( 32, "@MS2_GOOD_JOB", "openScriptMenu ms2quickresponses 5", ; )
+		CHOICE_BIND( 33, "@MS2_DONE_IT", "openScriptMenu ms2quickresponses 6", ; )
+		CHOICE_BIND( 34, "@MS2_TAKING_FIRE", "openScriptMenu ms2quickresponses 7", ; )
+		CHOICE_BIND( 35, "@MS2_ENEMY_SPOTTED", "openScriptMenu ms2quickresponses 8", ; )
+		CHOICE_BIND( 36, "@MS2_WOOHOO", "openScriptMenu ms2quickresponses 9", ; )
+
+		// CHOICE_BACK( "@MENU_BACK", close self )
+
+		CHOICE_KEYBINDHELP
+	}
+
+	menuDef
+	{
+		name 			ms2qmstm
+		fullScreen 		0
+		rect 			0 0 640 480			// Size and position of the menu
+		focusColor 		COLOR_FOCUSED			// Menu focus color for text and items
+		blurWorld		7.0
+		onEsc {close self; open ms2qm;}
+		PREPROC_SHADER_DRAW( -120 0 880 480, 0 0, "white", 0 0 0 0.75, 0, 1, 0 0 0 0 )
+
+		#undef BACK_OPEN
+		#define BACK_OPEN exec "wait";
+		#include "ui_mp/navcontrols.inc"
+
+		CHOICE_MENU_TITLE( "@MS2_QS_CTL" )
+		#include "ui_mp/scriptmenus/ms2qm_buttons.inc"
+
+		// CHOICE_SECTION_TITLE( 21, "@MS2_QS_CTL" )
+		#undef CHOICE_X_START
+		#define CHOICE_X_START		-250
+
+		CHOICE_BIND( 22, "@MS2_QM_ENEMY_SPOTTED", "openScriptMenu quickstatements 1", ; )
+		CHOICE_BIND( 23, "@MS2_QM_ENEMIES_SPOTTED", "openScriptMenu quickstatements 2", ; )
+		CHOICE_BIND( 24, "@MS2_QM_IM_IN_POSITION", "openScriptMenu quickstatements 3", ; )
+		CHOICE_BIND( 25, "@MS2_QM_AREA_SECURE", "openScriptMenu quickstatements 4", ; )
+		CHOICE_BIND( 26, "@MS2_QM_WATCH_SIX", "openScriptMenu quickstatements 5", ; )
+		CHOICE_BIND( 27, "@MS2_QM_SNIPER", "openScriptMenu quickstatements 6", ; )
+		CHOICE_BIND( 28, "@MS2_QM_NEED_REINFORCEMENTS", "openScriptMenu quickstatements 7", ; )
+		CHOICE_BIND( 29, "@MS2_ALL_YOU_GOT", "openScriptMenu ms2quickstatements 1", ; )
+		CHOICE_BIND( 30, "@MS2_TARGET_PRACTICE", "openScriptMenu ms2quickstatements 2", ; )
+		CHOICE_BIND( 31, "@MS2_COME_PREPARED", "openScriptMenu ms2quickstatements 3", ; )
+		CHOICE_BIND( 32, "@MS2_COWARDS", "openScriptMenu ms2quickstatements 4", ; )
+		CHOICE_BIND( 33, "@MS2_RUN_YELLOW", "openScriptMenu ms2quickstatements 5", ; )
+		CHOICE_BIND( 34, "@MS2_HIDING", "openScriptMenu ms2quickstatements 6", ; )
+		CHOICE_BIND( 35, "@MS2_WANTS_MORE", "openScriptMenu ms2quickstatements 7", ; )
+		CHOICE_BIND( 36, "@MS2_TOO_EASY", "openScriptMenu ms2quickstatements 8", ; )
+		CHOICE_BIND( 37, "@MS2_MESS_BEST", "openScriptMenu ms2quickstatements 9", ; )
+
+		// CHOICE_BACK( "@MENU_BACK", close self )
+
+		CHOICE_KEYBINDHELP
+	}
+}

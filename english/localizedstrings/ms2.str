@@ -1,0 +1,598 @@
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Call of Duty 4: Modern Warfare                                                                                                   ¦
+//¦----------------------------------------------------------------------------------------------------------------------------------¦
+//¦ Mod				: Modern Spearhead 2                                                                                 ¦
+//¦ Modifications By		: [G13]Gooser13 and [G13]Newfie"                                                                     ¦
+//¦ Website			: http://www.clang13.com                                                                             ¦
+//¦                                                                                                                                  ¦
+//¦ Main Source Mod		: The OpenWarfare Project... An Open Source Mod for COD4:MW!                                         ¦
+//¦ Website  			: http://openwarfaremod.com/                                                                         ¦
+//¦                                                                                                                                  ¦
+//¦ Secondary Source Mod	: AWE 4, By Wizz and Tally (dedicated to Bell - original creator of AWE)                             ¦
+//¦ Website  			: http://www.raidersmerciless.com/                                                                   ¦
+//¦                                                                                                                                  ¦
+//¦ Third Source Mod		: Freezetag v1.2 from kill3r                                                                         ¦
+//¦ Website  			: http://www.kill3rcreations.com/                                                                    ¦
+//¦                                                                                                                                  ¦
+//¦ Fourth Source Mod		: ExTreme+ X4 Mod                                                                                    ¦
+//¦ Website  			: http://www.mycallofduty.com                                                                        ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Colour Codes For RGB	Colour Codes For Text                                                                                ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Black  0 0 0		^0 = Black                                                                                           ¦
+//¦ White  1 1 1 		^7 = White                                                                                           ¦
+//¦ Red    1 0 0		^1 = Red                                                                                             ¦
+//¦ Green  0 1 0		^2 = Green                                                                                           ¦
+//¦ Blue   0 0 1		^4 = Blue                                                                                            ¦
+//¦ Yellow 1 1 0		^3 = Yellow                                                                                          ¦
+//¦ 				^5 = Cyan                                                                                            ¦
+//¦ 				^6 = pink/Magenta                                                                                    ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+VERSION          "1"
+CONFIG           "C:\trees\cod3\cod3\bin\StringEd.cfg"
+FILENOTES        ""
+
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Clan Mod Message Strings                                                                                                         ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+REFERENCE	MODNAME
+LANG_ENGLISH	"^1-= MODERN SPEARHEAD 2 V1.5.6 =-^7"
+
+REFERENCE	WEBSITE
+LANG_ENGLISH	"^3[G13]^2www.clang13.com"
+
+REFERENCE       FREEZETAG_FEATURE_ON
+LANG_ENGLISH	"^2MS2 ^5FREEZETAG ^2GAMEPLAY ON"
+
+REFERENCE       FREEZETAG_FEATURE_OFF
+LANG_ENGLISH	"^2MS2 ^5FREEZETAG ^2GAMEPLAY OFF"
+
+//+----------------------------------------------------------------------------------------------------------------------------------+
+// ui_mp/connect.menu
+//+----------------------------------------------------------------------------------------------------------------------------------+
+REFERENCE BROUGHT2U
+LANG_ENGLISH "Mod powered by..."
+
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Spearhead Quick Message Sound Strings                                                                                            ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+REFERENCE	ATTACK
+LANG_ENGLISH	"Attack!"
+
+REFERENCE	COVER_ME
+LANG_ENGLISH	"Cover Me!"
+
+REFERENCE	I_COVER_YOU
+LANG_ENGLISH	"I'll Cover You!"
+
+REFERENCE	COVERING_FIRE
+LANG_ENGLISH	"Squad, Covering Fire!"
+
+REFERENCE	GRENADE
+LANG_ENGLISH	"Granade! Take Cover!"
+
+REFERENCE	FOLLOW_ME
+LANG_ENGLISH	"Follow Me!"
+
+REFERENCE	OPEN_FIRE
+LANG_ENGLISH	"Open Fire!"
+
+REFERENCE	TAKE_POINT
+LANG_ENGLISH	"You Take Point!"
+
+REFERENCE	MOVE_SIGNAL
+LANG_ENGLISH	"Get Ready To Move In On My Signal!"
+
+REFERENCE	ALL_YOU_GOT
+LANG_ENGLISH	"That All You Got?"
+
+REFERENCE	TARGET_PRACTICE
+LANG_ENGLISH	"Come Back When You've Had Some Target Practice!"
+
+REFERENCE	COME_PREPARED
+LANG_ENGLISH	"Come Prepared Next Time!"
+
+REFERENCE	COWARDS
+LANG_ENGLISH	"Come On Out You Cowards!"
+
+REFERENCE	RUN_YELLOW
+LANG_ENGLISH	"Go On And Run Ya Yellowbellies!"
+
+REFERENCE	HIDING
+LANG_ENGLISH	"Where Are You Hiding?"
+
+REFERENCE	WANTS_MORE
+LANG_ENGLISH	"Who Wants More?"
+
+REFERENCE	TOO_EASY
+LANG_ENGLISH	"This Is Too Easy!"
+
+REFERENCE	MESS_BEST
+LANG_ENGLISH	"You Mess With The Best, You Die Like The Rest!"
+
+REFERENCE	YES_SIR
+LANG_ENGLISH	"Yes Sir!"
+
+REFERENCE	NO_SIR
+LANG_ENGLISH	"No Sir!"
+
+REFERENCE	THANKS
+LANG_ENGLISH	"Thanks!"
+
+REFERENCE	I_OWE_YOU
+LANG_ENGLISH	"I Owe You One!"
+
+REFERENCE	GOOD_JOB
+LANG_ENGLISH	"Good Job Team!"
+
+REFERENCE	DONE_IT
+LANG_ENGLISH	"We've done it!"
+
+REFERENCE	TAKING_FIRE
+LANG_ENGLISH	"Taking Fire! Need Some Help!"
+
+REFERENCE	ENEMY_SPOTTED
+LANG_ENGLISH	"Enemy Spotted!"
+
+REFERENCE	WOOHOO
+LANG_ENGLISH	"Wooohoo!"
+
+REFERENCE	QM_FOLLOW_ME
+LANG_ENGLISH	"On me!"
+
+REFERENCE	QM_MOVE_IN
+LANG_ENGLISH	"Move in!"
+
+REFERENCE	QM_FALL_BACK
+LANG_ENGLISH	"Fall back!"
+
+REFERENCE	QM_SUPPRESSING_FIRE
+LANG_ENGLISH	"Base of fire!"
+
+REFERENCE	QM_ATTACK_LEFT_FLANK
+LANG_ENGLISH	"Attack left flank!"
+
+REFERENCE	QM_ATTACK_RIGHT_FLANK
+LANG_ENGLISH	"Attack right flank!"
+
+REFERENCE	QM_HOLD_THIS_POSITION
+LANG_ENGLISH	"Hold this position!"
+
+REFERENCE	QM_REGROUP
+LANG_ENGLISH	"Regroup!"
+
+REFERENCE	QM_ENEMY_SPOTTED
+LANG_ENGLISH	"Contact!"
+
+REFERENCE	QM_ENEMIES_SPOTTED
+LANG_ENGLISH	"Multiple contacts!"
+
+REFERENCE	QM_IM_IN_POSITION
+LANG_ENGLISH	"In position."
+
+REFERENCE	QM_AREA_SECURE
+LANG_ENGLISH	"Area secure!"
+
+REFERENCE	QM_WATCH_SIX
+LANG_ENGLISH	"Watch your six!"
+
+REFERENCE	QM_SNIPER
+LANG_ENGLISH	"Sniper!"
+
+REFERENCE	QM_NEED_REINFORCEMENTS
+LANG_ENGLISH	"Need reinforcements!"
+
+REFERENCE	QM_YES_SIR
+LANG_ENGLISH	"Roger."
+
+REFERENCE	QM_NO_SIR
+LANG_ENGLISH	"Negative."
+
+REFERENCE	QM_IM_ON_MY_WAY
+LANG_ENGLISH	"Moving."
+
+REFERENCE	QM_SORRY
+LANG_ENGLISH	"Sorry."
+
+REFERENCE	QM_GREAT_SHOT
+LANG_ENGLISH	"Nice shot!"
+
+REFERENCE	QM_COME_ON
+LANG_ENGLISH	"Come on."
+
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Spearhead Quick Message Menu Strings	                                                                                     ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+REFERENCE	MS2_QM_BIND
+LANG_ENGLISH	"MS2 Voice Binds"
+
+REFERENCE	QC_CTL
+LANG_ENGLISH	"MS2 Quick Commands"
+
+REFERENCE	QS_CTL
+LANG_ENGLISH	"MS2 Quick Statements"
+
+REFERENCE	QR_CTL
+LANG_ENGLISH	"MS2 Quick Responses"
+
+REFERENCE	QUICK_MESSAGE
+LANG_ENGLISH	"MS2 Quick Messages"
+
+REFERENCE	ESC_EXIT
+LANG_ENGLISH	"Esc. Exit"
+
+REFERENCE	4_COMMANDS
+LANG_ENGLISH	"4. MS2 Commands"
+
+REFERENCE	5_STATEMENTS
+LANG_ENGLISH	"5. MS2 Statements"
+
+REFERENCE	6_RESPONSES
+LANG_ENGLISH	"6. MS2 Responses"
+
+REFERENCE	1_ATTACK
+LANG_ENGLISH	"1. Attack!"
+
+REFERENCE	2_COVER_ME
+LANG_ENGLISH	"2. Cover Me!"
+
+REFERENCE	3_I_COVER_YOU
+LANG_ENGLISH	"3. I'll Cover You!"
+
+REFERENCE	4_COVERING_FIRE
+LANG_ENGLISH	"4. Squad, Covering Fire!"
+
+REFERENCE	5_GRENADE
+LANG_ENGLISH	"5. Granade! Take Cover!"
+
+REFERENCE	6_FOLLOW_ME
+LANG_ENGLISH	"6. Follow Me!"
+
+REFERENCE	7_OPEN_FIRE
+LANG_ENGLISH	"7. Open Fire!"
+
+REFERENCE	8_TAKE_POINT
+LANG_ENGLISH	"8. You Take Point!"
+
+REFERENCE	9_MOVE_SIGNAL
+LANG_ENGLISH	"9. Get Ready To Move In On My Signal!"
+
+REFERENCE	1_ALL_YOU_GOT
+LANG_ENGLISH	"1. That All You Got?"
+
+REFERENCE	2_TARGET_PRACTICE
+LANG_ENGLISH	"2. Come Back When You've Had Some Target Practice!"
+
+REFERENCE	3_COME_PREPARED
+LANG_ENGLISH	"3. Come Prepared Next Time!"
+
+REFERENCE	4_COWARDS
+LANG_ENGLISH	"4. Come On Out You Cowards!"
+
+REFERENCE	5_RUN_YELLOW
+LANG_ENGLISH	"5. Go On And Run Ya Yellowbellies!"
+
+REFERENCE	6_HIDING
+LANG_ENGLISH	"6. Where Are You Hiding?"
+
+REFERENCE	7_WANTS_MORE
+LANG_ENGLISH	"7. Who Wants More?"
+
+REFERENCE	8_TOO_EASY
+LANG_ENGLISH	"8. This Is Too Easy!"
+
+REFERENCE	9_MESS_BEST
+LANG_ENGLISH	"9. You Mess With The Best, You Die Like The Rest!"
+
+REFERENCE	1_YES_SIR
+LANG_ENGLISH	"1. Yes Sir!"
+
+REFERENCE	2_NO_SIR
+LANG_ENGLISH	"2. No Sir!"
+
+REFERENCE	3_THANKS
+LANG_ENGLISH	"3. Thanks!"
+
+REFERENCE	4_I_OWE_YOU
+LANG_ENGLISH	"4. I Owe You One!"
+
+REFERENCE	5_GOOD_JOB
+LANG_ENGLISH	"5. Good Job Team!"
+
+REFERENCE	6_DONE_IT
+LANG_ENGLISH	"6. We've done it!"
+
+REFERENCE	7_TAKING_FIRE
+LANG_ENGLISH	"7. Taking Fire! Need Some Help!"
+
+REFERENCE	8_ENEMY_SPOTTED
+LANG_ENGLISH	"8. Enemy Spotted!"
+
+REFERENCE	9_WOOHOO
+LANG_ENGLISH	"9. Wooohoo!"
+
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Unreal Message Strings                                                                                                           ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+REFERENCE	HEADSHOT
+LANG_ENGLISH	"^2HEADSHOT"
+
+REFERENCE	FIRSTBLOOD_REPORT_ALL
+LANG_ENGLISH	"^2FIRSTBLOOD AWARDED TO"
+
+REFERENCE	FIRSTBLOOD_REPORT_SELF
+LANG_ENGLISH	"^2FIRSTBLOOD"
+
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Special Statistics Menu Strings                                                                                                  ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+REFERENCE	HUD_SCORE
+LANG_ENGLISH	"^5SCORE^3 "
+
+REFERENCE	HUD_HEADSHOTS
+LANG_ENGLISH	"^5HEADSHOTS^3 "
+
+REFERENCE	HUD_KNIFE
+LANG_ENGLISH	"^5KNIFE KILLS^3 "
+
+REFERENCE	HUD_BLOOD
+LANG_ENGLISH	"^5FIRSTBLOODS^3 "
+
+REFERENCE	HUD_NADE
+LANG_ENGLISH	"^5GRENADE KILLS^3 "
+
+REFERENCE	HUD_KILLSTREAK
+LANG_ENGLISH	"^5KILL STREAK^3 "
+
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Sticky Grenades Strings                                                                                                          ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+REFERENCE	STICK_NADES
+LANG_ENGLISH	"^5You have a grenade stuck on you!"
+
+REFERENCE	HAS_STUCK
+LANG_ENGLISH	"^3&&1 ^5has stuck a nade on ^3&&2"
+
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Match In Progress Strings                                                                                                        ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+REFERENCE       PREMATCH
+LANG_ENGLISH    "GAMEPLAY IN ^3NORMAL ^7MODE, PRESS ESC TO JOIN!"
+
+REFERENCE       LIVEMATCH
+LANG_ENGLISH    "GAMEPLAY IN ^3LIVE ^7MODE, ^1DO NOT ^7DISTURB!"
+
+REFERENCE       HAVENOPERMISSION
+LANG_ENGLISH    "YOU ^1DO NOT ^7HAVE PERMISSION TO JOIN THIS MATCH!"
+
+REFERENCE       TEAM_SWITCH_ALLIES
+LANG_ENGLISH	"Switching clan members to allies"
+
+REFERENCE       TEAM_SWITCH_AXIS
+LANG_ENGLISH	"Switching clan members to axis"
+
+REFERENCE       TEAM_SWITCH
+LANG_ENGLISH	"Switching Teams"
+
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Advanced ACP Menu Strings                                                                                                        ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+REFERENCE	AACP_WARN_CONTROL
+LANG_ENGLISH	"^3Player Message Panel"
+
+REFERENCE	AACP_PLAYER_TEMPBAN
+LANG_ENGLISH	"Temporarily Ban Player"
+
+REFERENCE	AACP_SHOW_WARNING
+LANG_ENGLISH	"Announce Message"
+
+REFERENCE	AACP_MATCHSET_CONTROL
+LANG_ENGLISH	"^3Matchset Control Panel"
+
+REFERENCE	AACP_CHANGE_SCORELIMIT
+LANG_ENGLISH	"Set Scorelimit"
+
+REFERENCE	AACP_SCORELIMIT_CHANGE
+LANG_ENGLISH	"^5Scorelimit has been set to ^3&&1^5 by an ^1Admin!^7"
+
+REFERENCE	AACP_ASK_IF_READY
+LANG_ENGLISH	"Ask If Teams are Ready"
+
+REFERENCE	AACP_BEGIN_MATCH
+LANG_ENGLISH	"Begin Match"
+
+REFERENCE	AACP_MATCH_SWITCH
+LANG_ENGLISH	"Switch Teams"
+
+REFERENCE	AACP_CLAN_AXIS
+LANG_ENGLISH	"set clan as axis"
+
+REFERENCE	AACP_CLAN_ALLIES
+LANG_ENGLISH	"Set clan as allies"
+
+REFERENCE	AACP_MATCH_LIVE
+LANG_ENGLISH	"Match is now live!!!"
+
+REFERENCE	AACP_KICK_NONCLAN
+LANG_ENGLISH	"Kick Non Members"
+
+REFERENCE	AACP_FTAG_GAME_ON
+LANG_ENGLISH	"Turn Freezetag On"
+
+REFERENCE	AACP_FTAG_GAME_OFF
+LANG_ENGLISH	"Turn Freezetag Off"
+
+REFERENCE	AACP_SUCCESS_NEXTMAP
+LANG_ENGLISH	"Successfully set next map."
+
+REFERENCE	AACP_ERROR_NEXTMAP
+LANG_ENGLISH	"Error setting next map."
+
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Freezetag Annoy Feature Strings                                                                                                  ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+REFERENCE 	ENEMY_ALREADY_FROZEN
+LANG_ENGLISH 	"^3&&1^5 is already Frozen, ^3and now so are you!"
+
+REFERENCE 	FRIENDLY_ALREADY_FROZEN
+LANG_ENGLISH 	"^5For annoying your teammate ^3&&1^5, you are now frozen!"
+
+REFERENCE 	ANNOY_GIVE_POINTS
+LANG_ENGLISH 	"^3&&1^5 will also get your last kill points!"
+
+REFERENCE 	ANNOY_RECEIVE_POINTS
+LANG_ENGLISH 	"^5You just received the last kill points from ^3&&1"
+
+REFERENCE 	ANNOY_FREEZE_PLAYER
+LANG_ENGLISH 	"^5and froze them because they were annoying you!"
+
+REFERENCE 	PLAYER_ANNOYING_PLAYER
+LANG_ENGLISH 	"&&1 ^3has been ^5frozen ^3for annoying ^7&&2"
+
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Freezetag Feature Strings                                                                                                        ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+REFERENCE 	FTAG
+LANG_ENGLISH 	"^5FreezeTag"
+
+REFERENCE 	FTAG_MELT_DISTANCE
+LANG_ENGLISH 	"^5You are too far away to Freeze ^3&&1"
+
+REFERENCE 	FTAG_DEFROSTING
+LANG_ENGLISH 	"^5Now Defrosting...^3"
+
+REFERENCE 	FTAG_FROZE
+LANG_ENGLISH 	"&&1 ^5Froze ^3&&2"
+
+REFERENCE 	FTAG_HUD_POINTS
+LANG_ENGLISH 	"^5You have been awarded ^3&&1 ^5points for defrosting ^3&&2!"
+
+REFERENCE 	FTAG_DEFROSTED
+LANG_ENGLISH 	"&&1 ^5Defrosted ^3&&2"
+
+REFERENCE 	FTAG_DEFROSTED_UNKNOWN
+LANG_ENGLISH 	"UnKnown"
+
+REFERENCE 	FTAG_AUTO_DEFROSTED
+LANG_ENGLISH 	"&&1 ^3Auto ^5Defrosted"
+
+REFERENCE 	FTAG_HUD_DEFROSTEDBY
+LANG_ENGLISH 	"^3You were ^5Defrosted by ^3&&1"
+
+REFERENCE 	FTAG_HUD_AUTO_DEFROSTED
+LANG_ENGLISH 	"^3You Auto ^5Defrosted"
+
+REFERENCE 	FTAG_HUD_FROZENBY
+LANG_ENGLISH 	"^3You were ^5Frozen by ^3&&1"
+
+REFERENCE 	FTAG_HUD_YOUFROZE
+LANG_ENGLISH 	"^3You ^5Froze ^3&&1"
+
+REFERENCE 	FTAG_HUD_YOUFROZE_SELF
+LANG_ENGLISH 	"^3You ^5Froze ^3Yourself!"
+
+REFERENCE 	FTAG_HUD_FROZE_HIMSELF
+LANG_ENGLISH 	"&&1 ^5froze ^3Himself!"
+
+REFERENCE 	FTAG_MATCH_TIE
+LANG_ENGLISH 	"^5Both teams have been frozen!"
+
+REFERENCE 	FTAG_SAS_FROZEN
+LANG_ENGLISH 	"^5All the ^3SAS^5 have been frozen!"
+
+REFERENCE 	FTAG_OPFOR_FROZEN
+LANG_ENGLISH 	"^5All the ^3OpFor^5 have been frozen!"
+
+REFERENCE 	FTAG_MARINES_FROZEN
+LANG_ENGLISH 	"^5All the ^3Marines^5 have been frozen!"
+
+REFERENCE 	FTAG_SPETSNAZ_FROZEN
+LANG_ENGLISH 	"^5All the ^3Spetsnaz^5 have been frozen!"
+
+REFERENCE 	YOU_WILL_DEFROST
+LANG_ENGLISH 	"^5Your team is frozen, you will auto defrost in ^3&&1 ^5seconds!"
+
+//******************************************************************************
+// openwarfare/_extendedobituaries.gsc
+//******************************************************************************
+
+REFERENCE EXTENDED_OBITUARY
+LANG_ENGLISH "^2&&1^5 froze ^1&&2^7. Hit location: &&3. Weapon: &&4. Distance: &&5."
+
+REFERENCE EXTENDED_OBITUARY_KILLEDBY_WEAPON
+LANG_ENGLISH "^5Frozen by: ^3&&1. Weapon: ^3&&2."
+
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Modern Spearhead 2 Streak Strings                                                                                                ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+REFERENCE       STREAK_SPEED_YOU
+LANG_ENGLISH	"^2You have earned extra speed for ^7&&1 ^2seconds."
+
+REFERENCE       STREAK_SPEED_ALL
+LANG_ENGLISH	"^7&&1 ^2has earned extra speed for ^7&&2 ^2seconds!"
+
+REFERENCE       STREAK_UAV_YOU
+LANG_ENGLISH	"^2You have been given a personal UAV for ^7&&1 ^2seconds."
+
+REFERENCE       STREAK_UAV_ALL
+LANG_ENGLISH	"^7&&1 ^2has been given a personal UAV for ^7&&2 ^2seconds!"
+
+REFERENCE       STREAK_HIDE_YOU
+LANG_ENGLISH	"^2You have become invisible for ^7&&1 ^2seconds."
+
+REFERENCE       STREAK_HIDE_ALL
+LANG_ENGLISH	"^7&&1 ^2has become invisible for ^7&&2 ^2seconds!"
+
+REFERENCE       STREAK_MELT_YOU
+LANG_ENGLISH	"^2You have gained instant melt ability for ^7&&1 ^2seconds."
+
+REFERENCE       STREAK_MELT_ALL
+LANG_ENGLISH	"^7&&1 ^2has gained instant melt ability for ^7&&2 ^2seconds!"
+
+REFERENCE       STREAK_INVINCIBLE_YOU
+LANG_ENGLISH	"^2You have become invincible for ^7&&1 ^2seconds."
+
+REFERENCE       STREAK_INVINCIBLE_ALL
+LANG_ENGLISH	"^7&&1 ^2has become invincible for ^7&&2 ^2seconds!"
+
+REFERENCE       STREAK_OVER_YOU
+LANG_ENGLISH	"^2Your special powers have expired."
+
+REFERENCE       STREAK_OVER_ALL
+LANG_ENGLISH	"^7&&1's ^2special powers have expired."
+
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ OW Stats                                                                                                                         ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+REFERENCE       STATS_MELTS
+LANG_ENGLISH	"Melts"
+
+REFERENCE       STATS_CUR_MELTSTREAK
+LANG_ENGLISH	"Current Melt Streak"
+
+REFERENCE       STATS_HIGH_MELTSTREAK
+LANG_ENGLISH	"Highest Melt Streak"
+
+REFERENCE       STATS_FREEZES
+LANG_ENGLISH	"Freezes"
+
+REFERENCE       STATS_CUR_FREEZESTREAK
+LANG_ENGLISH	"Current Freeze Streak"
+
+REFERENCE       STATS_HIGH_FREEZESTREAK
+LANG_ENGLISH	"Highest Freeze Streak"
+
+ENDMARKER

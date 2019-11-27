@@ -1,0 +1,228 @@
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Call of Duty 4: Modern Warfare                                                                                                   ¦
+//¦----------------------------------------------------------------------------------------------------------------------------------¦
+//¦ Mod				: Modern Spearhead 2                                                                                 ¦
+//¦ Modifications By		: [G13]Gooser13 and [G13]Newfie"                                                                     ¦
+//¦ Website			: http://www.clang13.com                                                                             ¦
+//¦                                                                                                                                  ¦
+//¦ Main Source Mod		: The OpenWarfare Project... An Open Source Mod for COD4:MW!                                         ¦
+//¦ Website  			: http://openwarfaremod.com/                                                                         ¦
+//¦                                                                                                                                  ¦
+//¦ Secondary Source Mod	: AWE 4, By Wizz and Tally (dedicated to Bell - original creator of AWE)                             ¦
+//¦ Website  			: http://www.raidersmerciless.com/                                                                   ¦
+//¦                                                                                                                                  ¦
+//¦ Third Source Mod		: Freezetag v1.2 from kill3r                                                                         ¦
+//¦ Website  			: http://www.kill3rcreations.com/                                                                    ¦
+//¦                                                                                                                                  ¦
+//¦ Fourth Source Mod		: ExTreme+ X4 Mod                                                                                    ¦
+//¦ Website  			: http://www.mycallofduty.com                                                                        ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Colour Codes For RGB	Colour Codes For Text                                                                                ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+//¦ Black  0 0 0		^0 = Black                                                                                           ¦
+//¦ White  1 1 1 		^7 = White                                                                                           ¦
+//¦ Red    1 0 0		^1 = Red                                                                                             ¦
+//¦ Green  0 1 0		^2 = Green                                                                                           ¦
+//¦ Blue   0 0 1		^4 = Blue                                                                                            ¦
+//¦ Yellow 1 1 0		^3 = Yellow                                                                                          ¦
+//¦ 				^5 = Cyan                                                                                            ¦
+//¦ 				^6 = pink/Magenta                                                                                    ¦
+//+----------------------------------------------------------------------------------------------------------------------------------+
+
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_GROUP			"ms2quickstatements"
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#include "ui_mp/popupstyle.inc"	
+#include "ui/choices_setup_popmenu.menu"
+
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X			350
+
+#undef CHOICE_POPUP_BACKCOLOR
+#define CHOICE_POPUP_BACKCOLOR  0.2 0.2 0.22 0.65
+
+#define ORIGIN_MS2QM_WINDOW		0 16
+
+{
+	menuDef
+	{
+		IMPROVED_POPUP_SETUP_ONOPEN( ms2quickstatements, 10, 4, 210, ;, setDvar cl_bypassMouseInput "1";, 0 )
+		onClose{ setDvar cl_bypassMouseInput "0" }
+		
+		CHOICE_POPMENU_TITLE( "@MS2_QUICK_MESSAGE" )
+		
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			16 20 0 0
+			origin			ORIGIN_MS2QM_WINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_1_ALL_YOU_GOT"
+			decoration
+		}
+		execKey "1" { scriptMenuResponse "1"; close ms2quickstatements }
+	
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			16 36 0 0
+			origin			ORIGIN_MS2QM_WINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_2_TARGET_PRACTICE"
+			decoration
+		}
+		execKey "2" { scriptMenuResponse "2"; close ms2quickstatements }
+	
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			16 52 0 0
+			origin			ORIGIN_MS2QM_WINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_3_COME_PREPARED"
+			decoration
+		}
+		execKey "3" { scriptMenuResponse "3"; close ms2quickstatements }
+	
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			16 68 0 0
+			origin			ORIGIN_MS2QM_WINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_4_COWARDS"
+			decoration
+		}
+		execKey "4" { scriptMenuResponse "4"; close ms2quickstatements }
+	
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			16 84 0 0
+			origin			ORIGIN_MS2QM_WINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_5_RUN_YELLOW"
+			decoration
+		}
+		execKey "5" { scriptMenuResponse "5"; close ms2quickstatements }
+
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			16 100 0 0
+			origin			ORIGIN_MS2QM_WINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_6_HIDING"
+			decoration
+		}
+		execKey "6" { scriptMenuResponse "6"; close ms2quickstatements }
+	
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			16 116 0 0
+			origin			ORIGIN_MS2QM_WINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_7_WANTS_MORE"
+			decoration
+		}
+		execKey "7" { scriptMenuResponse "7"; close ms2quickstatements }
+
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			16 132 0 0
+			origin			ORIGIN_MS2QM_WINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_8_TOO_EASY"
+			decoration
+		}
+		execKey "8" { scriptMenuResponse "8"; close ms2quickstatements }
+
+		itemDef
+		{
+			name			"window"
+			group			ingamebox
+			visible			1
+			rect			16 148 0 0
+			origin			ORIGIN_MS2QM_WINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_9_MESS_BEST"
+			decoration
+		}
+		execKey "9" { scriptMenuResponse "9"; close ms2quickstatements }
+
+		itemDef
+		{
+			name			"window"
+			visible			1
+			rect			16 164 0 0
+			origin			ORIGIN_MS2QM_WINDOW
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textaligny		8
+			text			"@MS2_ESC_EXIT"
+			decoration
+		}
+	}
+
+}

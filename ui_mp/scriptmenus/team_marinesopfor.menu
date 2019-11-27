@@ -1,0 +1,296 @@
+//******************************************************************************
+//  _____                  _    _             __
+// |  _  |                | |  | |           / _|
+// | | | |_ __   ___ _ __ | |  | | __ _ _ __| |_ __ _ _ __ ___
+// | | | | '_ \ / _ \ '_ \| |/\| |/ _` | '__|  _/ _` | '__/ _ \
+// \ \_/ / |_) |  __/ | | \  /\  / (_| | |  | || (_| | | |  __/
+//  \___/| .__/ \___|_| |_|\/  \/ \__,_|_|  |_| \__,_|_|  \___|
+//       | |               We don't make the game you play.
+//       |_|                 We make the game you play BETTER.
+//
+//            Website: http://openwarfaremod.com/
+//******************************************************************************
+
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_SIZE_X			150
+#define CHOICE_SIZE_Y			22
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			204//180
+
+#define CHOICE_SEP_OFFSET_Y		-2
+
+#define CHOICE_SEP_1			3
+#define CHOICE_SEP_2			6
+
+#define ORIGIN_BANNER		108 48
+
+#include "ui_mp/menustyle.inc"
+#include "ui_mp/choices_setup_teams.menu"
+
+#undef TEXTSIZE_SMALL
+#define TEXTSIZE_SMALL 0.3
+
+{
+	menuDef
+	{
+		name			"team_marinesopfor"
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		7.0
+		legacySplitScreenScale
+		onEsc
+		{
+			scriptMenuResponse "back";
+			//close "team_marinesopfor";
+		}
+		onOpen
+		{
+			//focusFirst;
+			setfocus "auto_assign";
+		}
+
+		#ifndef PC
+		execkeyint BUTTON_START
+		{
+			close self;
+		}
+		#endif
+
+		// background overlay
+		itemDef	{
+			style			WINDOW_STYLE_FILLED
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			backcolor		0 0 0 0.75 //0 0.05 0.15 0.5
+			visible			1
+			decoration
+			}
+		// gradient_top
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_top"
+			visible			1
+			decoration
+			}
+		// gradient_bottom
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			0 405 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_bottom"
+			visible			1
+			decoration
+			}
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_BANNER 400 0.5
+			background		"line_horizontal"
+			forecolor		1 1 1 0.85
+			visible			1	decoration	}
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_BANNER 340 10
+			origin			30 1
+			background		"line_horizontal"
+			forecolor		OBJECTIVE_COLOR_MARINES
+			visible			1
+			decoration	}
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_BANNER 400 0.5
+			origin			0 12
+			background		"line_horizontal"
+			forecolor		1 1 1 0.85
+			visible			1	decoration	}
+		itemDef	{
+			rect			-400 64 800 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_TITLE
+			textalign		ITEM_ALIGN_CENTER
+			forecolor		1 1 1 0.85
+			dvar			"ui_clan_welcome_mess"
+			visible			1	decoration	}
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			41 73 410 85
+			origin			0 0
+			backcolor		0 0 0 .5
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+
+			style			WINDOW_STYLE_SHADER
+			rect			43 75 408 83
+			origin			0 0
+			background		"white"
+			forecolor		.5 .5 .5 0.15
+			border			1
+			bordersize		1
+			bordercolor		0.5 0.5 0.5 0.7
+			visible			1
+			decoration
+		}
+		itemDef	{
+			rect			-275 95 410 85 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			type			ITEM_TYPE_BUTTON
+			dvar			"ui_server_rule_all_1"
+			textfont		UI_FONT_DEFAULT
+			textalign 		ITEM_ALIGN_LEFT
+			textscale		TEXTSIZE_SMALL
+			forecolor		1 1 1 1
+			backcolor		0 0 0 0
+			textalignx 		5
+			textaligny 		0
+			visible			1
+			decoration		autowrapped		}
+		itemDef	{
+			rect			-275 95 410 85 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			type			ITEM_TYPE_BUTTON
+			dvar			"ui_server_rule_all_2"
+			textfont		UI_FONT_DEFAULT
+			textalign 		ITEM_ALIGN_LEFT
+			textscale		TEXTSIZE_SMALL
+			forecolor		1 1 1 1
+			backcolor		0 0 0 0
+			textalignx 		5
+			textaligny 		15
+			visible			1
+			decoration		autowrapped		}
+		itemDef	{
+			rect			-275 95 410 85 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			type			ITEM_TYPE_BUTTON
+			dvar			"ui_server_rule_all_3"
+			textfont		UI_FONT_DEFAULT
+			textalign 		ITEM_ALIGN_LEFT
+			textscale		TEXTSIZE_SMALL
+			forecolor		1 1 1 1
+			backcolor		0 0 0 0
+			textalignx 		5
+			textaligny 		30
+			visible			1
+			decoration		autowrapped		}
+		itemDef	{
+			rect			-275 95 410 85 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			type			ITEM_TYPE_BUTTON
+			dvar			"ui_server_rule_all_4"
+			textfont		UI_FONT_DEFAULT
+			textalign 		ITEM_ALIGN_LEFT
+			textscale		TEXTSIZE_SMALL
+			forecolor		1 1 1 1
+			backcolor		0 0 0 0
+			textalignx 		5
+			textaligny 		45
+			visible			1
+			decoration		autowrapped		}
+		itemDef	{
+			rect			-275 95 410 85 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			type			ITEM_TYPE_BUTTON
+			dvar			"ui_server_rule_all_5"
+			textfont		UI_FONT_DEFAULT
+			textalign 		ITEM_ALIGN_LEFT
+			textscale		TEXTSIZE_SMALL
+			forecolor		1 1 1 1
+			backcolor		0 0 0 0
+			textalignx 		5
+			textaligny 		60
+			visible			1
+			decoration		autowrapped		}
+
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			41 163 410 20
+			origin			0 0
+			backcolor		0 0 0 .5
+			visible			when ( dvarbool( ui_motd_enable ) )
+			decoration
+		}
+		itemDef
+		{
+
+			style			WINDOW_STYLE_SHADER
+			rect			43 165 408 18
+			origin			0 0
+			background		"white"
+			forecolor		.5 .5 .5 0.15
+			border			1
+			bordersize		1
+			bordercolor		0.5 0.5 0.5 0.7
+			visible			when ( dvarbool( ui_motd_enable ) )
+			decoration
+		}
+		itemDef	{
+			rect			-275 95 410 15 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			type			ITEM_TYPE_BUTTON
+			dvar			"ui_motd"
+			textfont		UI_FONT_DEFAULT
+			textalign 		ITEM_ALIGN_LEFT
+			textscale		0.2
+			forecolor		1 1 1 1
+			backcolor		0 0 0 0
+			textalignx 		5
+			textaligny 		85
+			visible			when ( dvarbool( ui_motd_enable ) )
+			decoration		autowrapped		}
+
+		// ------------------ TREE TITLE ------------------
+
+		CHOICE_MENU_TITLE( "@MPUI_CHOOSE_TEAM" )
+
+		// map display ================================================
+		#include "ui_mp/tactical_map.inc";
+
+		// ------------------ buttons ---------------------
+		#define BACK_OPEN	;
+		#include "ui_mp/navcontrols.inc"
+
+		//=========================================================
+		//===================== MENU SELECTION ====================
+		//=========================================================
+		#include "ui_mp/teamicon.inc"
+
+		// PC widescreen fix
+		#ifdef PC
+			#undef  CHOICE_X_START
+			#define CHOICE_X_START	-320
+
+			#undef	CHOICE_HORIZONTAL_ALIGN
+			#define CHOICE_HORIZONTAL_ALIGN HORIZONTAL_ALIGN_CENTER
+		#endif
+
+		//CHOICE_BUTTON_VIS( itemIndex, textArg, actionArg, visArg )
+		CHOICE_BUTTON_VIS( 1, "@" + dvarString( g_TeamName_Axis ), play "mouse_click"; scriptMenuResponse "axis";, when( ( team( name ) == "TEAM_SPECTATOR" || team(name) == "TEAM_FREE" ) && dvarint(ui_force_autoassign) == 0 && dvarint(ui_force_allies) == 0 ); )
+		CHOICE_DBUTTON_VIS( 1, "@" + dvarString( g_TeamName_Axis ), when( ( team( name ) == "TEAM_SPECTATOR" || team(name) == "TEAM_FREE" ) && ( dvarint(ui_force_autoassign) == 1 || dvarint(ui_force_allies) == 1 ) ); )
+
+		CHOICE_BUTTON_BG( 2, 1 )
+		CHOICE_HIGHLIGHT( 2, 1 )
+
+		CHOICE_BUTTON_VIS_NOHI( 2, "@" + dvarString( g_TeamName_Allies ), play "mouse_click"; scriptMenuResponse "allies";, when( ( team( name ) == "TEAM_AXIS" || team( name ) == "TEAM_SPECTATOR" || team(name) == "TEAM_FREE" ) && dvarint(ui_force_autoassign) == 0 && dvarint(ui_force_axis) == 0 ); )
+		CHOICE_DBUTTON_VIS_NOHI( 2, "@" + dvarString( g_TeamName_Allies ), when( ( team( name ) == "TEAM_AXIS" || team( name ) == "TEAM_SPECTATOR" || team(name) == "TEAM_FREE" ) && ( dvarint(ui_force_autoassign) == 1 || dvarint(ui_force_axis) == 1 ) ); )
+
+		CHOICE_BUTTON_VIS_NOHI( 2, "@" + dvarString( g_TeamName_Axis ), play "mouse_click"; scriptMenuResponse "axis";, when( team( name ) == "TEAM_ALLIES" && dvarint(ui_force_autoassign) == 0 && dvarint(ui_force_allies) == 0 ); )
+		CHOICE_DBUTTON_VIS_NOHI( 2, "@" + dvarString( g_TeamName_Axis ), when( team( name ) == "TEAM_ALLIES" && ( dvarint(ui_force_autoassign) == 1 || dvarint(ui_force_allies) == 1 ) ); )
+
+		CHOICE_BUTTON_EX_ADV( 3, "@MPUI_AUTOASSIGN", play "mouse_click"; scriptMenuResponse "autoassign";, name "auto_assign", when( ( gametype() != "bel" || team( name ) == "TEAM_SPECTATOR" ) && dvarint(ui_force_allies) == 0 && dvarint(ui_force_axis) == 0 ); )
+		CHOICE_DBUTTON_VIS_NOHI( 3, "@MPUI_AUTOASSIGN", when( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS" ) && gametype() == "bel" ) || dvarint(ui_force_allies) == 1 || dvarint(ui_force_axis) == 1 ); )
+		CHOICE_SEPARATOR( CHOICE_SEP_1 )
+
+		CHOICE_BUTTON_BG( 4, 1 )
+		CHOICE_HIGHLIGHT( 4, 1 )
+		CHOICE_BUTTON_VIS_NOHI( 4, "@MPUI_SPECTATOR", play "mouse_click"; scriptMenuResponse "spectator";, when( dvarInt( ui_broadcaster ) != 1 && team( name ) != "TEAM_SPECTATOR" && dvarbool( scr_game_spectatetype ) ); )
+		CHOICE_BUTTON_VIS_NOHI( 4, "@OW_BROADCASTER", play "mouse_click"; scriptMenuResponse "spectator";, when( dvarInt( ui_broadcaster ) == 1 && team( name ) != "TEAM_SPECTATOR" && dvarbool( scr_game_spectatetype ) ); )
+		CHOICE_BUTTON_VIS_NOHI( 4, "@MENU_CONTROLS", close self; open main_controls;, when( team( name ) == "TEAM_SPECTATOR" ) )
+
+		CHOICE_BUTTON_VIS( 5, "@MENU_OPTIONS", close self; open main_options; execnow "set ui_allow_graphic_change 0";, when( team( name ) == "TEAM_SPECTATOR" ) )
+		CHOICE_BUTTON_VIS( 6, "@MPUI_LEAVE_GAME", open popup_endgame, when( team( name ) == "TEAM_SPECTATOR" ) )
+
+		CHOICE_SEPARATOR( CHOICE_SEP_2 )
+		CHOICE_BUTTON( 7, "@MS2_MS2_QM_BIND", close self; open ms2qm; )
+	}
+}
